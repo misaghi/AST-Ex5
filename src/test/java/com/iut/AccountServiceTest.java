@@ -20,6 +20,12 @@ public class AccountServiceTest {
         accountService = new AccountService(repository);
     }
 
+    @AfterEach
+    void teardown() {
+        repository = null;
+        accountService = null;
+    }
+
     @Test
     void createAccountTest() {
         Assertions.assertTrue(accountService.createAccount(accountId, balance, userId));

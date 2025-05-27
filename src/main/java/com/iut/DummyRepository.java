@@ -73,12 +73,12 @@ public class DummyRepository implements Repository<Account, String> {
 
     @Override
     public List<Account> findAllById(String userId) {
-        List<Account> result = new ArrayList<>();
+        List<Account> results = new ArrayList<>();
         for (int i = 0; i < accounts.size(); i++) {
             if (accounts.get(i).getUserId().equals(userId)) {
-                result.add(accounts.get(i));
+                results.add(accounts.get(i));
             }
         }
-        return result;
+        return results;
     }
 }
