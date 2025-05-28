@@ -9,5 +9,5 @@ public interface Repository<T, ID>{
     boolean existsById(ID id);
     T findById(ID id);
     List<T> findAll();
-    List<T> findAllById(ID id);
+    List<T> findAllByUserId(ID id);
 }

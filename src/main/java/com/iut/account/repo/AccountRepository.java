@@ -107,7 +107,7 @@ public class AccountRepository implements Repository<Account, String> {
         return accounts;
     }
 
-    public List<Account> findAllById(String userId) {
+    public List<Account> findAllByUserId(String userId) {
         String selectSQL = "SELECT * FROM bank_account WHERE user_id = ?";
         List<Account> accounts = new ArrayList<>();
         try (PreparedStatement pstmt = connection.prepareStatement(selectSQL)) {

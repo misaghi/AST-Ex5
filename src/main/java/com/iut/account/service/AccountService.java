@@ -76,5 +76,5 @@ public class AccountService {
         return repository.findById(id);
     }
 
-    public List<Account> getAllAccounts(String userId) {return repository.findAllById(userId);}
+    public List<Account> getAllAccounts(String userId) {return repository.findAllByUserId(userId);}
 }

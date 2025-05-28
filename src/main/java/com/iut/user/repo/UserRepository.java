@@ -102,11 +102,11 @@ public class UserRepository implements Repository<User, String> {
         return null;
     }
 
-    public List<User> findAllById(String id) {
+    public List<User> findAllByUserId(String userId) {
         String selectSQL = "SELECT * FROM users WHERE id = ?";
         List<User> users = new ArrayList<>();
         try (PreparedStatement pstmt = connection.prepareStatement(selectSQL)) {
-            pstmt.setString(1, id);
+            pstmt.setString(1, userId);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 users.add(new User(

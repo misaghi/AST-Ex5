@@ -37,15 +37,16 @@ public class DummyRepository implements Repository<Account, String> {
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(String accountId) {
         for (int i = 0; i < accounts.size(); i++) {
-            if (accounts.get(i).getId().equals(id)) {
+            if (accounts.get(i).getId().equals(accountId)) {
                 accounts.remove(i);
                 return true;
             }
         }
         return false;
     }
+
     @Override
     public boolean existsById(String accountId) {
         for (int i = 0; i < accounts.size(); i++) {
@@ -72,7 +73,7 @@ public class DummyRepository implements Repository<Account, String> {
     }
 
     @Override
-    public List<Account> findAllById(String userId) {
+    public List<Account> findAllByUserId(String userId) {
         List<Account> results = new ArrayList<>();
         for (int i = 0; i < accounts.size(); i++) {
             if (accounts.get(i).getUserId().equals(userId)) {
